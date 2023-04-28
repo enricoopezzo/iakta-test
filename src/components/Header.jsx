@@ -1,8 +1,10 @@
-import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
+
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -15,10 +17,11 @@ export const Header = () => {
           </Nav>
           <Nav>
                 <NavLink to="/login" className="nav-link">Login</NavLink>
+                <NavLink to="/logout" className="nav-link">Logout</NavLink>
                 <NavLink to="/register" className="nav-link">Register</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};

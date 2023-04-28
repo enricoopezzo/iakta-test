@@ -27,7 +27,6 @@ export const Login = () => {
             .then((response) => {
                 console.log(response.data);
                 console.log(response.statusText);
-                localStorage.setItem('userLogin', JSON.stringify(response.data));
                 localStorage.setItem('authToken', response.data.token);
             })
             .catch(error => setError(error.response.data.message));

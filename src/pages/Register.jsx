@@ -20,9 +20,9 @@ const SignupSchema = Yup.object().shape({
 
 export const Register = () => {
     const saveUser = (obj) => {
-    axios.post('http://staging.iakta.net:8000/api/register', obj).then(response => {
-        console.log(response.statusText);
-        // navigate("/posts");
+    axios.post('http://staging.iakta.net:8000/api/register', obj)
+          .then(response => {
+            console.log(response.statusText);
     });
   }
   

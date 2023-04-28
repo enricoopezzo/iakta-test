@@ -1,11 +1,24 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import { Button, Container, Table } from 'react-bootstrap'
 import axios from 'axios';
 
 
 
 export const UserList = () => {
+  const [data, setData] = useState([]);
 
+  useEffect(() => {
+
+    axios.get('http://staging.iakta.net:8000/api/listUsers',{
+    headers: {"Authorization" : `Bearer ${localStorage.getItem('authToken')}`}})
+      .then(response => {
+        setData(response.data);
+        
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  }, []);
   
   return (
     <Container>
@@ -20,20 +33,20 @@ export const UserList = () => {
                 </tr>
             </thead>
         <tbody>
-        {/* {userlist.map(user => (
+        {data.map(user => (
             <tr key={user.id}>
             <td>{user.id}</td>
             <td>{user.username}</td>
+            <td>{user.email}</td>
 
             <td className="text-center">
-                {user.id === userLog.user.id ? (
                     <>
-                    <Button variant="outline-secondary" className='btn-sm mx-1' onClick={() => navigate('/users/'+ele.id+'/posts')}><ListCheck /></Button>
+                    <Button variant="outline-secondary" className='btn-sm mx-1'>Follow</Button>
                     </>
-         ) : ''}
+
             </td>
             </tr>
-        ))} */}
+        ))} 
             
         </tbody>
         </Table>
