@@ -1,6 +1,7 @@
 import React,{ useEffect, useState } from 'react'
 import { Button, Container, Table } from 'react-bootstrap'
 import axios from 'axios';
+import { CreatePost } from '../components/CreatePost';
 
 export const Posts = () => {
     const [data, setData] = useState([]);
@@ -22,6 +23,7 @@ export const Posts = () => {
   return (
     <Container>
         <h2 className="my-3 text-center display-3">Posts</h2>
+        <CreatePost />
         <Table striped bordered hover>
             <thead>
                 <tr>
