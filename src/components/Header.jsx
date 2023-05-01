@@ -15,9 +15,9 @@ export const Header = () => {
             <NavLink to="/posts" className="nav-link">Posts</NavLink>
           </Nav>
           <Nav>
-                <NavLink to="/login" className="nav-link">Login</NavLink>
-                <NavLink to="/logout" className="nav-link">Logout</NavLink>
-                <NavLink to="/register" className="nav-link">Register</NavLink>
+            <NavLink to="/login" className="nav-link">Login</NavLink>
+            <NavLink to="/logout" className="nav-link">Logout</NavLink>
+            <NavLink to="/register" className="nav-link">Register</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

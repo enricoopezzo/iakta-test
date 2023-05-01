@@ -55,7 +55,7 @@ export const UserList = () => {
 
   const unfollowUser = (id) => {
     axios
-      .post('http://staging.iakta.net:8000/api/unFollowUser',
+      .delete('http://staging.iakta.net:8000/api/unFollowUser',
         { id },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` },

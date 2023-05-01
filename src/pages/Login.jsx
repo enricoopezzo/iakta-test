@@ -32,14 +32,13 @@ export const Login = () => {
                 console.log(response.statusText);
                 localStorage.setItem('authToken', response.data.token);
                 alert('Login Succesful!');
-                navigate('/users');
+                navigate('/posts');
                 
             })
             .catch(error => setError(error.response.data.message));
   }
   
   return (
-    <>
       <Container style={{ width: "600px" }}>
         <h2 className="my-3 text-center display-3">Login</h2>
         {error && <Alert variant={"danger"}> {error} </Alert>}
@@ -81,6 +80,5 @@ export const Login = () => {
           )}
         </Formik>
       </Container>
-    </>
   )
 }

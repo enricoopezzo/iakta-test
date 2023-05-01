@@ -35,7 +35,6 @@ export const Register = () => {
     }
   
   return (
-    <>
       <Container style={{ width: "600px" }}>
         <h2 className="my-3 text-center display-3">Register</h2>
         <Formik
@@ -85,6 +84,5 @@ export const Register = () => {
           )}
         </Formik>
       </Container>
-    </>
   )
 }
