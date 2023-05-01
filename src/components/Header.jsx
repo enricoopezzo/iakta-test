@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
 
-
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>

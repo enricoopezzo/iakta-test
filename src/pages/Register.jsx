@@ -3,6 +3,7 @@ import axios from 'axios';
 import * as Yup from "yup";
 import { Formik, Form, Field } from 'formik';
 import { Container, Alert } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 
 const regexPassword = /^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{6,})\S$/;
 
@@ -19,10 +20,14 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const Register = () => {
+
+    const navigate = useNavigate();
+
     const saveUser = (obj) => {
     axios.post('http://staging.iakta.net:8000/api/register', obj)
           .then(response => {
             console.log(response.statusText);
+            navigate('/login');
     });
   }
   
