@@ -25,25 +25,19 @@ export const Posts = () => {
         <Table striped bordered hover>
             <thead>
                 <tr>
-                <th>#</th>
-                <th>Message</th>
                 <th>Date</th>
+                <th>Message</th>  
                 <th>user</th>
                 </tr>
             </thead>
         <tbody>
         {data.map(post => (
             <tr key={post.id}>
-            <td>{post.message}</td>
-            <td>{post.date}</td>
-            <td>{post.UserId}</td>
-
-            <td className="text-center">
-                    <>
-                    <Button variant="outline-secondary" className='btn-sm mx-1'>Follow</Button>
-                    </>
-
+            <td>
+              {new Date(post.date).toLocaleTimeString("en-GB")}, {new Date(post.date).toLocaleDateString("en-GB")}
             </td>
+            <td>{post.message}</td>
+            <td>{post.UserId}</td>
             </tr>
         ))} 
             
