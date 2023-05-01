@@ -28,8 +28,11 @@ export const Register = () => {
           .then(response => {
             console.log(response.statusText);
             navigate('/login');
-    });
-  }
+          })
+          .catch(error => {
+            alert('Something went wrong!');
+          });
+    }
   
   return (
     <>

@@ -31,6 +31,7 @@ export const Login = () => {
                 console.log(response.data);
                 console.log(response.statusText);
                 localStorage.setItem('authToken', response.data.token);
+                alert('Login Succesful!');
                 navigate('/users');
                 
             })
